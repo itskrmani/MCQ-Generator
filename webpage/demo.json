@@ -1,0 +1,44 @@
+[
+    {  
+      "question" : "what is your name ?",
+      "choices"  : ["abhinav","manish","malkeet","manthan"],
+      "correct_ans":"manish",
+      "type" : "mcq"
+    },
+    {
+        "question" : "where do you live ?",
+        "choices"  : ["bhutan","india","austrlia","us"],
+        "correct_ans":"india",
+        "type" : "mcq"
+    },
+    {
+        "question" : "what do you want ?",
+        "choices"  : ["icecream","duniya","naukri","water"],
+        "correct_ans":"water",
+        "type"  : "mcq"
+    },
+    {
+      "question" : "we are at IITK ?",
+      "choices"  : ["True","False"],
+      "correct_ans":"True",
+      "type"  : "t_or_f"
+      },
+      {
+        "question" : "we are at IITK ?",
+        "choices"  : ["True","False"],
+        "correct_ans":"True",
+        "type"  : "t_or_f"
+    },
+    {
+      "question" : "we are at IITK ?",
+      "choices"  : ["True","False"],
+      "correct_ans":"True",
+      "type"  : "t_or_f"
+    },
+    {
+      "question" : "we are at IITK ?",
+      "choices"  : ["True","False"],
+      "correct_ans":"True",
+      "type"  : "t_or_f"
+    }
+  ]
