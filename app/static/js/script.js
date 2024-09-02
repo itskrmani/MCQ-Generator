@@ -6,6 +6,7 @@ function shuffle(array) {
 
 function appendData(data) {
     let mainContainer = document.getElementById("myData");
+   
     mainContainer.innerHTML = '';
     for (let i = 0; i < data.length; i++) {
         let div_element = document.createElement("div");
@@ -16,13 +17,14 @@ function appendData(data) {
         // console.log(choices);
         let id = 'attrib'
         choices.forEach(function(choice,index) {     text += '<li>'+choice+'</li>'    })  
-        div_element.innerHTML = '<br><div id=' + id + (i + 1) + '><p> <b>Question ' + (i + 1) + ': ' + data[i].question + "</b><button id='edit_btn' type='button' class='btn btn-outline-primary' onclick = 'to_edit(" + id + (i + 1) + ")'><i class='fa-solid fa-pencil'></i>  </button>" + '</p><ol>' + text + '</ol> <p > Correct Answer : <span style="color: green; font-weight:bold">' + data[i].answer + '</span></p></div>';
+        div_element.innerHTML = '<div class="mcqs" id=' + id + (i + 1) + '><p> <b>Question ' + (i + 1) + ': ' + data[i].question + "</b><button id='edit_btn' type='button' class='btn btn-outline-primary' onclick = 'to_edit(" + id + (i + 1) + ")'><img src='static/img/edit.svg'>  </button>" + '</p><ol>' + text + '</ol> <p > Correct Answer : <span style="color: green; font-weight:bold">' + data[i].answer + '</span></p></div>';
 
         mainContainer.appendChild(div_element);
     }
 }
 
 let loadingDiv = document.getElementById('loading');
+// console.log(loadingDiv, 'loadingDiv');
 
 function showSpinner() {
   loadingDiv.style.visibility = 'visible';
@@ -31,7 +33,7 @@ function showSpinner() {
 function hideSpinner() {
   loadingDiv.style.visibility = 'hidden';
 }
-
+hideSpinner();
 const load_mcq = () => {
     const user_textarea = document.getElementById("user_text").value;
     showSpinner();
@@ -55,7 +57,8 @@ const load_mcq = () => {
     .then(data => {
         console.log(data)
         appendData(data)
-        hideSpinner();})
+        hideSpinner();
+    })
     .catch(err => {
         hideSpinner();
         console.error(err)
@@ -70,14 +73,14 @@ const to_edit=(paragraph_id) => {
     if (flag ==0){
         paragraph_id.contentEditable = true;
         paragraph_id.style.backgroundColor = "#ddd";
-        paragraph_id.style.padding = "5px";
+        // paragraph_id.style.padding = "5px";
 
         flag = 1;
     
     }else{
         paragraph_id.contentEditable = false;
         paragraph_id.style.backgroundColor = "#fff";
-        paragraph_id.style.padding = "0px";
+        // paragraph_id.style.padding = "0px";
         flag =0;
     }
 
